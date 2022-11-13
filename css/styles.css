@@ -370,6 +370,16 @@ figcaption,
     position: relative; }
     #portfolio #page li h6 {
       margin-bottom: 0; }
+
+    #portfolio #page li.stitchfix {
+      background-color: #fff;     color: #222; }
+
+
+    #portfolio #page li.stitchfix a { color: #22bfb0; border-color: #22bfb0; }
+    #portfolio #page i:after {
+      color: #fff;
+    }
+
     #portfolio #page li.givey {
       background-color: #c82650; }
       #portfolio #page li.givey i {
