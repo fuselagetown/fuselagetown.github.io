@@ -3,5 +3,5 @@ sass:
   sass_dir: sass
 permalink: /:categories/:title/
 timezone: America/Los_Angeles
-baseurl: "/fuselagetown"
+baseurl: ""
 exclude: [Gemfile, Gemfile.lock]
