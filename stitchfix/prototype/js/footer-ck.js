@@ -1,1 +1,0 @@
-$(document).ready(function(){});$(function(){var e=$(this).val();$("#mc_embed_signup .email").focus(function(){$(this).val("")})});
