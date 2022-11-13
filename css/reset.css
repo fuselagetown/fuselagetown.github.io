@@ -50,7 +50,7 @@ body {
   margin: 0;
   font-size: 70%;
   line-height: 1.231;
-  font-family: "Sanchez", Arial, Helvetica, sans-serif;
+  font-family: "Cabin", Arial, Helvetica, sans-serif;
   font-weight: 400; }
 
 body, button, input, select, textarea {
@@ -95,10 +95,11 @@ a:visited {
   color: #222; }
 
 a:hover {
-  color: #000; }
+  color: #000;
+  outline: 0; }
 
 a:focus {
-  outline: thin dotted; }
+  outline: 0; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
 a:hover, a:active {
@@ -205,8 +206,7 @@ h4 {
   font-size: 1.4em; }
 
 h5 {
-  font-size: 1.2em;
-  font-weight: bold; }
+  font-size: 1.2em; }
 
 h6 {
   font-size: 1.1em; }
@@ -376,24 +376,6 @@ input {
   font-style: italic;
   text-shadow: 1px 1px 2px #fff; }
 
-input#name {
-  margin-right: 1px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px; }
-
-input#submit {
-  background: #419639;
-  float: left;
-  width: 20%;
-  clear: none;
-  text-shadow: 1px 1px 2px #3a8633;
-  color: #fff;
-  font-style: normal;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px; }
-
 form div {
   clear: both;
   padding: 10px 0; }
@@ -404,34 +386,34 @@ form div input {
 
 .button,
 .button:visited {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -o-border-radius: 2px;
-  border-radius: 2px;
-  background: #e34b64;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
   text-decoration: none;
   display: inline-block;
-  color: #fff;
   cursor: pointer;
   padding: 0.4em 1.1em;
   margin-bottom: 5px;
   border: 0;
   width: auto;
-  text-align: center; }
+  color: #fff;
+  text-align: center;
+  background-color: #45168b; }
   .button:hover, .button:focus,
   .button:visited:hover,
   .button:visited:focus {
     color: #fff;
-    background-color: #933f57;
+    background-color: #2c0e59;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out; }
+    transition: all 0.3s ease-in-out;
+    outline: 0; }
   .button:active,
   .button:visited:active {
     color: #fff;
-    background-color: #933f57;
-    border-width: 2px; }
+    background-color: #120624; }
     .button:active:hover,
     .button:visited:active:hover {
       background-color: #000; }

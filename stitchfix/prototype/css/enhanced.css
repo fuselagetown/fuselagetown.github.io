@@ -1,0 +1,69 @@
+section {
+  position: relative;
+  font-size: 2rem; }
+
+h1 {
+  font-size: 40px;
+  font-size: 4.0rem; }
+
+h2 {
+  font-size: 36px;
+  font-size: 3.6rem; }
+
+h3 {
+  font-size: 32px;
+  font-size: 3.2rem; }
+
+h4 {
+  font-size: 28px;
+  font-size: 2.8rem; }
+
+h5 {
+  font-size: 24px;
+  font-size: 2.4rem; }
+
+h6 {
+  font-size: 20px;
+  font-size: 2.0rem; }
+
+#toggle {
+  z-index: 0; }
+  #toggle i {
+    display: none; }
+
+.items,
+.items.order,
+div.summary {
+  padding-right: 20%;
+  padding-left: 20%; }
+  .items.order .edit,
+  .items.order.order .edit,
+  div.summary.order .edit {
+    right: 20%;
+    top: 30px; }
+
+.calendar,
+div.share {
+  max-width: 500px; }
+
+.card {
+  margin: 5% auto;
+  max-width: 500px; }
+
+.schedule {
+  background: url(../img/thanksgiving.jpg) no-repeat;
+  background-size: auto 100%;
+  background-position: 50% 0;
+  background-attachment: fixed;
+  background-color: #000;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
+  height: 100%;
+  margin: 0 auto;
+  width: 100%; }
+  .schedule h5 {
+    background: #f9ece1;
+    color: #453635; }

@@ -1,0 +1,596 @@
+@import "reset.css";
+
+@mixin corners($rounded: 5px) {
+
+  -webkit-border-radius: $rounded;
+  -moz-border-radius: $rounded;
+  -o-border-radius: $rounded;
+  border-radius: $rounded;
+}
+
+@mixin clear {
+  &:before { content: ""; display: table; }
+  &:after { content: ""; display: table; clear: both; }
+  zoom: 1;
+}
+
+$sf-green : #86C6BD; 
+$sf-dark-green : #68BCB0; 
+$sf-white : #FEFAF7; 
+$sf-grey : #847C78; 
+$sf-dark-grey : #453635; 
+$sf-red : #FF5D60; 
+
+
+@-webkit-keyframes cardAnim {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(-100px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+.card {
+	-webkit-animation: cardAnim 0.3s ease both;
+	-webkit-animation-delay: 1.5s;
+	-moz-animation: cardAnim 0.3s ease both;
+	-moz-animation-delay: 1.5s;
+}
+
+svg {
+		position: absolute;
+		top: 250px;
+		left: 50%;
+		z-index: 0;
+	}
+
+	svg path,
+	svg rect{
+	  fill: $sf-grey;
+
+	  .schedule & { fill: $sf-white; }
+	}
+
+
+/* BY TORUNN SEIM SKROGSTAD
+-------------------------------------*/
+
+@font-face { 
+  font-family: 'stitchfix';
+  src:url('../fonts/stitchfix.eot');
+  src:url('../fonts/stitchfix.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/stitchfix.svg#stitchfix') format('svg'),
+    url('../fonts/stitchfix.woff') format('woff'),
+    url('../fonts/stitchfix.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin icons {
+	font-family: 'stitchfix';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	width: 40px;
+	height: 40px;
+	display: block;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+		&:after { 
+		display: block;
+	}
+
+
+}
+
+
+body {	
+	height: 100%;
+	background: $sf-dark-grey;
+	&.summary { background: $sf-dark-green; }
+	&.picks { background: $sf-white; }
+}
+
+.page {
+	color: $sf-white;
+	text-align: center;
+	@include clear;
+}
+
+header {
+	width: 100%;
+	background: #fff; 
+	z-index: 3;
+}
+
+h1 {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 100%;
+	margin: 0;
+
+ 	a {
+		background: url(../img/stitch-fix-logo.png) no-repeat 20px center transparent;
+		background-size: auto 30px;
+		display: block;
+		border-bottom: 0; 
+		&:hover { border-color: #6c8029; }
+	}
+
+}
+
+article {
+	margin-bottom: 2em;
+}
+
+
+.home { 
+	h2 { padding-top: 5%; }
+	p { padding: 5% 5% 0 5%; }
+}
+
+.items {
+	list-style: none;
+	margin: 0; 
+	padding: 0 0 5px 5px;
+	text-align: center;
+	@include clear;
+
+	ul, li { 
+	list-style: none;
+	text-align: center;
+	}
+
+	li {
+		margin: 0;
+		width: 32%;
+		display: inline-block;
+		padding: 0 5px 5px 0;
+		position: relative;
+		height: 100%;
+
+		img {
+			border: 4px solid $sf-white;
+			display: block;
+			width: 100%;
+			z-index: 3;
+			position: relative;
+			&:hover { 
+				opacity: 0;
+			    -webkit-transition: all 0.3s ease-in-out;
+			    -moz-transition: all 0.3s ease-in-out;
+			    -o-transition: all 0.3s ease-in-out;
+			    transition: all 0.3s ease-in-out; }
+		}
+
+		a {
+			width: 100%;
+			b {
+				background: $sf-red;
+				color: $sf-white;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 5px;
+				bottom: 5px;
+				padding: 20px;
+				z-index: 2;
+				font-weight: normal;
+				text-align: center;
+
+			}
+		}
+	}
+
+	&.order {
+		position: relative;
+		padding: 5% 2%;
+
+		li {
+			width: 100%;
+			line-height: 70px;
+			text-align: left;
+			background: $sf-white;
+			color: $sf-dark-grey;
+			padding: 0;
+			margin-bottom: 5px;
+		}
+
+		img {
+			width: 75px;
+			float: left;
+			margin-right: 10px;
+			border: 0;
+			border-right: 5px solid $sf-dark-green; 
+		}
+
+		.price {
+			bottom: 0;
+			right: 0;
+			padding: 0 10px;
+		}
+
+		.edit {
+			position: absolute;
+			right: 5px;
+			top: 5px;
+			border-bottom: 0;
+			background: $sf-dark-grey;
+			padding: 2px 10px;
+			width: auto;
+			
+		}
+	}
+
+	&.picks {
+		padding: 2%;
+	}
+
+	&.keeping {
+		background: $sf-dark-green;
+	}
+
+	&.returning {
+		color: $sf-grey;
+		background: darken($sf-white,1%);
+
+		img {			
+			border-right: 5px solid $sf-white; 
+		}
+
+		.edit {
+			background: $sf-grey;
+			color: $sf-white;
+		}
+
+	}
+
+}
+
+.your-order {
+}
+
+.price {
+	background: $sf-white;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	z-index: 4;
+	padding: 5px;
+	color: $sf-grey;
+}
+
+a.cta {
+	background: $sf-red;
+	width: 100%;
+	max-width: 300px;
+	padding: 20px;
+	&:hover,
+	&:focus { 
+		background: darken($sf-red, 20%);
+		&:hover { color: #fff; }
+	}
+}
+
+.card {
+	background: $sf-white;
+	color: $sf-dark-grey;
+	margin: 5% ;
+	@include clear;
+
+	.pick & {
+		margin: 5% auto;
+		max-width: 300px;
+	}
+
+	.cta {
+		margin: 0;
+		max-width: 100%;
+	}
+
+	.image {
+		position: relative;
+	}
+
+	a {
+		margin-bottom: 0;
+		width: 100%;
+		padding: 20px;
+	}
+
+	.choice {
+		a {
+			float: left;
+			width: 50%;
+			background: $sf-grey;
+			&:hover, &:focus { 
+				background: darken($sf-grey,10%); 
+				&:active { 
+					background: #fff; 
+					color: $sf-grey; 
+				}
+			}
+			&:first-child { 
+				background: $sf-green; 
+				&:hover, &:focus { 
+					background: $sf-dark-green; 
+					&:active { 
+						background: #fff; 
+						color: $sf-dark-green; 
+					} 
+				}
+			}
+
+		}
+	}
+
+	.selfie {
+		font-size: 1.4rem;
+		padding: 0 5%;
+		margin-bottom: 2em;
+		@include clear;
+
+		a { 
+			font-size: 1.2rem;
+			padding: 20px 0;
+		}
+
+		
+	}
+
+
+
+	&.review {
+		
+		img { 
+			width: 50%;
+			float: left;
+		}
+
+		.selfies img { float: none; margin-bottom: 2em; }
+
+		.image {
+			background: $sf-dark-green ;
+			@include clear; 
+			color: $sf-white;
+
+			.status {
+				float: right;
+				width: 50%;
+				padding: 5%;
+
+			}
+
+			a { 
+				width: auto; 
+				padding: 2px 6px; 
+				font-size: 1.4rem;
+				background: $sf-white; 
+				color: $sf-dark-green;
+			}
+
+		}
+
+		&.rejected {
+				
+
+			.image {
+				background: $sf-grey;
+
+				a {
+					color: $sf-dark-grey;
+				}
+			}
+		}
+
+		&.upsell {
+		}
+
+	}
+
+	.pick &,
+	.share &,
+	.upsell & {
+
+		a {
+			position: relative;
+			$facebook-blue : #3B5999;
+			$twitter-blue : #4099FF;
+			&.facebook { background: $facebook-blue; &:hover, &:focus { background: lighten($facebook-blue, 10%) } }
+			&.twitter { background: $twitter-blue; &:hover, &:focus { background: lighten($twitter-blue, 10%) } }
+		
+			span { 
+				display: block;
+				font-size: 1.3rem;
+			}
+		}
+	}
+
+	h4, h5, h6 {
+		clear: both;
+		padding: 5%;
+		margin-bottom: 1rem;
+	}
+
+	h5 { background: darken($sf-white,5%); }
+
+	textarea { height: 100px; }
+
+	p:last-child { margin-bottom: 0;}
+}
+
+.share {
+	blockquote, .your-selfie { padding: 10px; }
+}
+
+.icon {
+	@include icons;
+	float: left;
+	height: 20px;
+	width: 20px;
+	&:after 	{ font-size: 2rem; content: "\e601"; }
+
+	.facebook & {  &:after 	{ content: "\e600"; } }
+}
+
+.beauty {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    background: purple;
+    z-index: 0;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+.beauty:hover {
+	cursor: pointer;
+}
+
+.bar {
+	clear: both; 
+	margin-bottom: 1em;
+	padding: 5%;
+	span {
+		height: 4px;
+		background: $sf-grey;
+		display: block;
+		@include corners;
+		position: relative;
+		b {
+			display: block;
+			height: 44px;
+			width: 44px;
+			border: 13px solid transparent;
+			position: absolute;
+			background: transparent;
+			left: calc(50% - 22px);
+			top: -20px;
+	    	overflow: scroll;
+	    	cursor: move;
+
+
+			&:hover { cursor: pointer; span { background: darken($sf-red, 10%); } }
+			span { background: $sf-red; @include corners(44px); width: 100%; height: 100%;}
+	    	&.ui-draggable-dragging { span { background: $sf-green;} }
+		}
+		
+		i {
+			position: absolute;
+			bottom: -18px;
+			font-size: 1.2rem;
+			left: 0;
+			&:last-child { left: auto; right: 0;}
+		}
+	}
+	h6 {
+		margin-bottom: 5px;	}
+}
+
+
+
+div.summary {
+
+	dl {
+	float: right;
+	padding: 0 10px 0 0;
+	
+
+	}
+	dt {
+		display: inline;
+		float: left;
+		clear: both;
+		text-align: left;
+	}
+	dd {
+		float: right;
+		text-align: right;
+	}
+
+	.button {
+		background: $sf-red;
+	}
+
+
+} 
+
+.schedule {
+
+		h5 {
+		background: url(../img/thanksgiving.jpg) no-repeat;
+		color: #fff; 
+
+		}
+
+}
+
+
+.calendar {
+
+	table {
+		width: 90%;
+		margin: 0 auto 2em;
+	}
+
+	td {
+		background: darken($sf-white, 4%);
+		border: 1px solid $sf-white;
+		width: 12%;
+
+		&.unavailable {
+
+		&:hover { cursor: pointer; background: $sf-white }
+		}
+
+		&.available {
+			background: $sf-grey;
+			color: $sf-white;
+			&:hover { cursor: pointer;  background: $sf-green; &:active { background: $sf-dark-green;} }
+
+		}
+	}
+}
+
+.tastes {
+		margin-bottom: 2em;
+		background: $sf-dark-grey;
+		color: $sf-white;
+
+		.taste-card {
+			max-width: 600px;
+			padding: 5%;
+			margin: 5% auto 0 auto;
+
+
+		a {
+			width: auto;
+			padding: 1px 5px;
+			margin: 2px;
+			display: inline-block;
+			border-bottom: 0;
+			@include corners(3px);
+			background: $sf-white;
+			color: $sf-grey;
+			&:hover, &:focus { background: $sf-green; color: $sf-dark-grey; }
+			}
+		}
+
+		.words {
+			@include clear;
+			margin-bottom: 2em;
+		}
+		
+}
+
+
+

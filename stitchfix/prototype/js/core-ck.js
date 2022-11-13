@@ -1,0 +1,1 @@
+$("textarea").focus(function(){$(this).css("background","none")}).blur(function(){$(this)[0].value==""&&$(this).css("background","url(img/thanksgiving.jpg) center center no-repeat")});

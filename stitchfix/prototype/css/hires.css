@@ -1,0 +1,11 @@
+/* hi-res image replacement */
+
+
+
+header h1 a {
+	background-image:url(../img/logo@2x.png);
+	background-size: 96px 50px;
+}
+
+body {
+}

@@ -22,7 +22,7 @@ $.jribbble.getShotsByPlayerId('fuselagetown', function (playerShots) {
     });
 
     $('#shotsByPlayerId').html(html.join(''));
-}, {page: 1, per_page: 8});
+}, {page: 1, per_page: 6});
 
 
 
