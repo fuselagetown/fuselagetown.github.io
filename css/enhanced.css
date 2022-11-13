@@ -67,3 +67,6 @@ i.reference {
   position: absolute;
   top: 0;
   left: -9.5rem; }
+
+  #tdc nav .resume a,
+  #givey nav .resume a { color: #000 !important; }
