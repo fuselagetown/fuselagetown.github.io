@@ -440,7 +440,7 @@ figcaption,
   -webkit-animation-delay: 7s; }
 
 #cv h4 {
-  font-style: italic; }
+  }
 #cv article:nth-child(1) {
   background-color: #6a45a2;
   color: #d4cae5; }
@@ -456,7 +456,6 @@ figcaption,
   background: #f5faf9; }
   #cv .work-experience h6,
   #cv .qualifications h6 {
-    font-style: italic;
     color: #86a69f; }
     #cv .work-experience h6.company,
     #cv .qualifications h6.company {
@@ -583,7 +582,6 @@ figcaption,
   text-align: center;
   padding: 1rem;
   color: #c3c6c1;
-  font-weight: 700;
   font-size: 0.9em; }
   .references-title p {
     margin-bottom: 0; }
@@ -629,8 +627,6 @@ i.reference {
     .work-examples .button:hover, .work-examples .button:focus {
       background: #86a69f; }
 
-.hello h4 {
-  font-weight: 700; }
 
 .cta {
   clear: both;
